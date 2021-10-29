@@ -6,7 +6,7 @@
 -   Type commands below into the terminal window to install  `docker`. More instructions can be found  [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
     
     ```bash
-    sudo apt-get update
+    sudo apt-get update --allow-unauthenticated
     ```
     ```bash
     sudo apt-get --no-install-recommends install -y \
@@ -24,7 +24,7 @@
       stable"
       ```
       ```bash
-    sudo apt-get update
+      sudo apt-get update --allow-unauthenticated 
     ```
     ```bash
     sudo apt-get --no-install-recommends install -y docker-ce docker-ce-cli containerd.io
@@ -38,6 +38,10 @@
     ```
     ```bash
     sudo usermod -aG docker $USER
+    ```
+
+    ```bash
+    sudo reboot
     ```
 
 
