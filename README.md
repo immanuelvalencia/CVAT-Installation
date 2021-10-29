@@ -9,34 +9,38 @@
     
 -   Type commands below into the terminal window to install  `docker`. More instructions can be found  [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
     
-    ```sh
+    ```bash
     sudo apt-get update
-    
+    ```
+    ```bash
     sudo apt-get --no-install-recommends install -y \
       apt-transport-https \
       ca-certificates \
       curl \
       gnupg-agent \
       software-properties-common
-      
+      ```
+      ```bash
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository \
       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
       $(lsb_release -cs) \
       stable"
-      
+      ```
+      ```bash
     sudo apt-get update
-    
-    sudo apt-get --no-install-recommends install -y docker-ce docker-ce-cli containerd.io
-    
-    
     ```
+    ```bash
+    sudo apt-get --no-install-recommends install -y docker-ce docker-ce-cli containerd.io
+    ```
+    
     
 -   Perform  [post-installation steps](https://docs.docker.com/install/linux/linux-postinstall/)  to run docker without root permissions.
     
-    ```sh
+    ```bash
     sudo groupadd docker
-    
+    ```
+    ```bash
     sudo usermod -aG docker $USER
     ```
 
@@ -53,20 +57,22 @@
     
     ```bash
     sudo apt-get --no-install-recommends install -y git
-    
-    git clone https://github.com/opencv/cvat
-    
-    cd cvat
-    
     ```
+    ```bash
+    git clone https://github.com/opencv/cvat
+    ```
+    ```bash
+    cd cvat
+    ```
+
     
 -   Run docker containers. It will take some time to download the latest CVAT release and other required images like postgres, redis, etc. from DockerHub and create containers.
     
-    ```sh
+    ```bash
     docker-compose up -d
     ```
 - You can register a user but by default it will not have rights even to view list of tasks. Thus you should create a superuser. A superuser can use an admin panel to assign correct groups to the user. Please use the command below:
 
-	```sh
+	```bash
 	docker exec -it cvat bash -ic 'python3 ~/manage.py createsuperuser'
 	```
