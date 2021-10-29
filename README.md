@@ -18,6 +18,8 @@
       ```
       ```bash
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+      ```
+      ```bash
     sudo add-apt-repository \
       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
       $(lsb_release -cs) \
@@ -49,10 +51,11 @@
     
     ```bash
     sudo apt-get --no-install-recommends install -y python3-pip python3-setuptools
-    
-    sudo python3 -m pip install setuptools docker-compose
     ```
     
+    ```bash
+    sudo python3 -m pip install setuptools docker-compose
+    ```
 -   Clone  _CVAT_  source code from the  [GitHub repository](https://github.com/opencv/cvat).
     
     ```bash
